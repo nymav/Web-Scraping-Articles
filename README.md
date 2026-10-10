@@ -1,38 +1,21 @@
-# Neural Development Articles Web Scraping
+# Neural Development Article Analysis
 
-This R script scrapes article details from the Neural Development journal website for a given year and analyzes the extracted data.
+An R workflow for collecting article metadata from the Neural Development journal and visualising publication patterns.
 
-## Dependencies
+## Run
 
-- `rvest`
-- `dplyr`
-- `ggplot2`
-- `stringr`
+Install the required packages in R:
 
-## How to Use
+```r
+install.packages(c("rvest", "dplyr", "ggplot2", "stringr"))
+```
 
-Install the required libraries if not already installed:
+Open [final.R](final.R), review the target year and journal URL, and run the script in R or RStudio. Internet access is required to retrieve the source pages.
 
-   ```R
-   install.packages("rvest")
-   install.packages("dplyr")
-   install.packages("ggplot2")
-   install.packages("stringr")
+## Output
 
-The script will scrape article details, create a dataset, and generate visualizations.
+The script collects article details, including titles, authors, publication dates, abstracts, and keywords, into a data frame. It generates plots of articles published per month and the number of authors per article.
 
-Functionality
-The script constructs a URL for a specific year, reads the HTML, and extracts article details such as title, authors, correspondence author, published date, abstract, and keywords.
+## Notes
 
-The extracted data is stored in a data frame.
-
-The published date is converted to a standard format, and the month is extracted and factorized.
-
-Two visualizations are generated:
-
-A bar plot showing the number of articles published per month.
-A scatter plot showing the distribution of the number of authors per article.
-Output
-The script produces visualizations and saves the extracted data in a data frame.
-
-In this README file, I've provided information about dependencies, how to use the script, the functionality of the script, the output it generates, and a note about respecting website terms and conditions. Feel free to customize it according to your project's specifics.
+The extraction depends on the journal’s HTML structure. Check the collected fields when the source website changes, and follow its access policies.
